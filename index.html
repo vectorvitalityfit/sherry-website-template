@@ -20,81 +20,168 @@
       opacity: 1 !important;
       font-weight: 700 !important;
     }
+    
+    /* --- CUSTOM MODERN UI OVERRIDES --- */
+    
+    /* Interactive Project Cards */
+    .project-card {
+      border: 1px solid #eaeaea;
+      border-radius: 12px;
+      padding: 30px;
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 25px;
+      width: 100%;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-color: #d1d5db;
+    }
+
+    /* Technology Tags/Badges */
+    .tech-badge {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #334155;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin: 8px 6px 0 0;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Icon Styling */
+    .contact-icon {
+      width: 30px;
+      color: #2563eb; /* Clean tech blue */
+      font-size: 1.2em;
+      text-align: center;
+      margin-right: 5px;
+    }
+
+    /* Typography Polish */
+    .project-title {
+      font-size: 1.5em;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .project-role {
+      font-weight: 600;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 
 <body>
   <div class="menu-container"></div>
   <div class="content-container">
-    <div class="banner" style="background: url('img/Mac.PNG') no-repeat center; background-size: cover; height: 300px;"></div>
+    
+    <div class="banner" style="background: url('img/Mac.PNG') no-repeat center; background-size: cover; height: 350px;"></div>
     <div class="banner">
       <div class="banner-table flex-column">
         <div class="flex-row">
           <div class="flex-item flex-column">
-            <h2 class="add-top-margin-small">Sheraz Arshad</h2>
-            <p class="text">
-              I am a student at McMaster University pursuing a Bachelor of Science in Mathematics and Statistics. I specialize in software development and data science, with a strong focus on machine learning, artificial intelligence and quantum computing. I am passionate about building robust backend systems and applying computer vision to solve complex technical challenges.
+            <h1 class="add-top-margin-small" style="font-size: 3em; font-weight: 800; color: #0f172a;">Sheraz Arshad</h1>
+            <p class="text" style="font-size: 1.1em; line-height: 1.6; color: #000000; max-width: 800px;">
+              I am a student at McMaster University pursuing a Bachelor of Science in Mathematics and Statistics. I specialize in software development and data science, with a strong focus on <strong>machine learning</strong>, <strong>artificial intelligence</strong>, and <strong>quantum computing</strong>. I am passionate about building robust backend systems and applying computer vision to solve complex technical challenges.
             </p>
           </div>
         </div>
       </div>
     </div>
+    
     <div class="content">
       <div class="content-table flex-column">
+        
         <div class="flex-row">
           <div class="flex-item flex-column">
-            <h2>Contact & Links</h2>
+            <h2 style="color: #0f172a;">Connect With Me</h2>
             <hr>
-            <p class="text text-large">
-              <strong>Email:</strong> <a href="mailto:sherazarshad27@gmail.com">sherazarshad27@gmail.com</a><br>
-              <strong>LinkedIn:</strong> <a target="_blank" href="https://www.linkedin.com/in/sheraz-arshad">View Profile</a><br>
-              <strong>GitHub:</strong> <a target="_blank" href="https://github.com/vectorvitalityfit">View Repositories</a>
+            <p class="text text-large" style="line-height: 2;">
+              <i class="fas fa-envelope contact-icon"></i> <a href="mailto:sherazarshad27@gmail.com" style="text-decoration: none; color: #334155;">sherazarshad27@gmail.com</a><br>
+              <i class="fab fa-linkedin contact-icon"></i> <a target="_blank" href="https://www.linkedin.com/in/sheraz-arshad" style="text-decoration: none; color: #334155;">linkedin.com/in/sheraz-arshad</a><br>
+              <i class="fab fa-github contact-icon"></i> <a target="_blank" href="https://github.com/vectorvitalityfit" style="text-decoration: none; color: #334155;">github.com/vectorvitalityfit</a>
             </p>
-            <div class="control-group">
-                <a class="custom-button custom-button-primary" href="resume.pdf" target="_blank">Download Resume (PDF)</a>
+            <div class="control-group add-top-margin-small">
+                <a class="custom-button custom-button-primary pulse-primary" href="resume.pdf" target="_blank" style="font-weight: bold; border-radius: 8px;">
+                  <i class="fas fa-download" style="margin-right: 8px;"></i> Download Resume
+                </a>
             </div>
-          </div>
-        </div>
-        <div class="flex-row">
-          <div class="flex-item flex-column full-width">
-            <h2 id="list-of-projects" class="add-top-margin">Projects</h2>
-            <hr>
           </div>
         </div>
         
         <div class="flex-row">
-          <div class="flex-item flex-item-stretch-4 flex-column">
+          <div class="flex-item flex-column full-width">
+            <h2 id="list-of-projects" class="add-top-margin-large" style="color: #0f172a;">Featured Work</h2>
+            <hr style="margin-bottom: 30px;">
+          </div>
+        </div>
+        
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column project-card">
+            <span class="project-title">Neuro-Kinematic</span>
+            <div class="project-role"><i class="fas fa-microchip"></i> Hardware & AI Development</div>
             <p class="text">
-              <span class="highlight-text">NeuroMotion AI</span><br>
-              <strong>Description:</strong> A computer vision-based physical rehabilitation platform designed to assess and correct human movement.<br>
-              <strong>What I Did:</strong> Conceptualized the platform architecture and developed the application strategy to integrate machine learning models for real-time tracking.<br>
-              <strong>Technologies Used:</strong> Python, Computer Vision, Machine Learning Frameworks.
+              A 1-bit Binarized Neural Network ASIC that physically diagnoses heart disease in a single clock cycle, enabling 100% private, battery-less medical wearables without cloud computing.
             </p>
+            <p class="text">
+              <strong>What I Did:</strong> Led the core development in an 8-hour sprint. Hardcoded the model into custom logic gates for zero-latency AI, passing all foundry prechecks and gate-level physical simulations.
+            </p>
+            <div>
+              <span class="tech-badge">PyTorch</span>
+              <span class="tech-badge">Verilog</span>
+              <span class="tech-badge">ASIC Design</span>
+              <span class="tech-badge">TinyTapeout</span>
+            </div>
           </div>
         </div>
 
         <div class="flex-row">
-          <div class="flex-item flex-item-stretch-4 flex-column">
+          <div class="flex-item flex-item-stretch flex-column project-card">
+            <span class="project-title">NeuroMotion AI</span>
+            <div class="project-role"><i class="fas fa-camera"></i> Computer Vision Architecture</div>
             <p class="text">
-              <span class="highlight-text">OccluPose</span><br>
-              <strong>Description:</strong> A real-time human pose estimation system built to accurately track movement even during visual occlusions.<br>
-              <strong>What I Did:</strong> Developed the core pose-estimation system and authored the accompanying research paper abstract for conference submission.<br>
-              <strong>Technologies Used:</strong> Python, Deep Learning, Data Analytics.
+              A computer vision-based physical rehabilitation platform designed to assess and correct human movement in real-time.
             </p>
+            <p class="text">
+              <strong>What I Did:</strong> Conceptualized the platform architecture and developed the application strategy to integrate complex machine learning models for real-time kinematic tracking.
+            </p>
+            <div>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">OpenCV</span>
+              <span class="tech-badge">Machine Learning</span>
+            </div>
           </div>
         </div>
 
         <div class="flex-row">
-          <div class="flex-item flex-item-stretch-4 flex-column">
+          <div class="flex-item flex-item-stretch flex-column project-card">
+            <span class="project-title">OccluPose</span>
+            <div class="project-role"><i class="fas fa-brain"></i> Deep Learning Research</div>
             <p class="text">
-              <span class="highlight-text">Neuro-Kinematic</span><br>
-              <strong>Description:</strong> A 1-bit Binarized Neural Network ASIC that physically diagnoses heart disease in a single clock cycle, enabling 100% private, battery-less medical wearables without cloud computing.<br>
-              <strong>What I Did:</strong> I led the core development in an 8-hour sprint. I harcoded the model into custom logic gates for zero-latency AI which passed all foundry prechecks and gate-level physical simulations. <br>
-              <strong>Technologies Used:</strong> PyTorch, Verilog, ASIC, TinyTapeout.
+              A real-time human pose estimation system built to accurately track joint movement even during severe visual occlusions.
             </p>
+            <p class="text">
+              <strong>What I Did:</strong> Developed the core pose-estimation system and authored the accompanying technical research paper abstract for conference submission.
+            </p>
+            <div>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Deep Learning</span>
+              <span class="tech-badge">Data Analytics</span>
+            </div>
           </div>
         </div>
-        </div>
+
+      </div>
     </div>
     <div class="footer-container"></div>
   </div>
